@@ -10,12 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_01_143227) do
+ActiveRecord::Schema.define(version: 2020_02_01_143736) do
 
   create_table "diaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "text"
     t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "spends", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "house", default: 0
+    t.integer "foods", default: 0
+    t.integer "traffic", default: 0
+    t.integer "infra", default: 0
+    t.integer "expendables", default: 0
+    t.integer "hoby", default: 0
+    t.integer "friends", default: 0
+    t.integer "books", default: 0
+    t.integer "medical", default: 0
+    t.integer "etc", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
