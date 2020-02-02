@@ -66,3 +66,20 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails-i18n'
 gem 'capistrano'
+# ==== 設定 ====
+gem'devise-i18n'
+gem'devise-i18n-views'
+
+# ==== 認証 ====
+gem'devise'
+
+# ==== 画像投稿 ====
+gem'carrierwave'
+gem'mini_magick'
+
+# ==== フロント ====
+gem'haml-rails'
+gem'font-awesome-rails'
+gem'gretel'
+gem'bootstrap'
+gem'sitemap_generator'
