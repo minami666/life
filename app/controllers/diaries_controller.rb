@@ -14,6 +14,7 @@ class DiariesController < ApplicationController
 
   def create
     @diary = Diary.create(diary_params)
+    # binding.pry
     if @diary.save
       redirect_to root_path
     else
@@ -40,7 +41,7 @@ class DiariesController < ApplicationController
 
   private
     def diary_params
-      params.require(:diary).permit(:title,:text,:image)
+      params.require(:diary).permit(:title,:text,:image).merge(user_id: current_user.id)
     end
 
     def set_diary

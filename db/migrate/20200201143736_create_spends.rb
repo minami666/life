@@ -1,6 +1,7 @@
 class CreateSpends < ActiveRecord::Migration[6.0]
   def change
-    create_table :spends do |t|
+		create_table :spends do |t|
+		t.references :diary, foreign_key: true
 		t.integer :house,default: 0
 		t.integer :foods,default: 0
 		t.integer :traffic,default: 0

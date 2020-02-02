@@ -3,7 +3,20 @@
     = render partial: './component/header'
 
   .diaries_new__box
-    
+    .diaries_new__box__form
+      -# = render partial: 'new_form'
+      = form_with model: @diary,local: true do |f|
+        .diaries_new__box__form--title
+          %p タイトル
+          = f.text_field :title, {placeholder: "題名"}
+        .diaries_new__box__form--text
+          %p 本文
+          = f.text_field :text, {placeholder: "本文を書こう"}
+        .diaries_new__box__form--image
+          %p 画像
+          = f.file_field :image
+        .diaries_new__box__form--submit
+          = f.submit "投稿"
 
   .diaries_new__footer
     = render partial: './component/footer'
