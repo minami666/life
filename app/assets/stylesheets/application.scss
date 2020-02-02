@@ -1,3 +1,29 @@
+@import "./reset";
+@import "./font";
+@import 'font-awesome';
+
+// ======================= 変数 =======================
+@import './01_var/colours';
+@import './02_mixin/mixin';
+
+// ======================= 部品 =======================
+@import './03_component/header';
+@import './03_component/footer';
+
+// ======================= ユーザー情報 =======================
+@import './04_devise/conf/new';
+
+// ======================= 日記 =======================
+@import './05_diaries/index';
+@import './05_diaries/show';
+@import './05_diaries/new';
+@import './05_diaries/edit';
+
+// ======================= サイト全体のフロント構成 =======================
+.wrapper{
+  width: 100%;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
