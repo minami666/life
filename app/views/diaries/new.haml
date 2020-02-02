@@ -4,7 +4,9 @@
 
   .diaries_new__box
     .diaries_new__box__form
-      -# = render partial: 'new_form'
+      -# ===================================================
+      -# ====================== 日記 ======================
+      -# ===================================================
       = form_with model: @diary,local: true do |f|
         .diaries_new__box__form--title
           %p タイトル
@@ -15,6 +17,14 @@
         .diaries_new__box__form--image
           %p 画像
           = f.file_field :image
+          -# ===================================================
+          -# ====================== 家計簿 ======================
+          -# ===================================================
+          = f.fields_for :spend do |k|
+
+
+
+
         .diaries_new__box__form--submit
           = f.submit "投稿"
 
