@@ -17,13 +17,32 @@
         .diaries_new__box__form--image
           %p 画像
           = f.file_field :image
-          -# ===================================================
-          -# ====================== 家計簿 ======================
-          -# ===================================================
-          = f.fields_for :spend do |k|
-
-
-
+        -# ===================================================
+        -# ====================== 家計簿 ======================
+        -# ===================================================
+        .diaries_new__box__form--spend
+          %p 家計簿
+          = f.fields_for :spend, @diary.build_spend do |s|
+            %p 家賃
+            = s.number_field :house
+            %p 食費
+            = s.number_field :foods
+            %p 移動費
+            = s.number_field :traffic
+            %p 水道光熱費＋通信費
+            = s.number_field :infra
+            %p 消耗品
+            = s.number_field :expendables
+            %p 趣味
+            = s.number_field :hoby
+            %p 交遊費
+            = s.number_field :friends
+            %p 本
+            = s.number_field :books
+            %p 医療費
+            = s.number_field :medical
+            %p その他
+            = s.number_field :etc
 
         .diaries_new__box__form--submit
           = f.submit "投稿"

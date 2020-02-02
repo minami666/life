@@ -10,11 +10,11 @@ class DiariesController < ApplicationController
 
   def new
     @diary = Diary.new
+    @diary.build_spend
   end
 
   def create
     @diary = Diary.create(diary_params)
-    # binding.pry
     if @diary.save
       redirect_to root_path
     else
@@ -41,7 +41,24 @@ class DiariesController < ApplicationController
 
   private
     def diary_params
-      params.require(:diary).permit(:title,:text,:image).merge(user_id: current_user.id)
+      params.require(:diary)
+      .permit(:title,
+        :text,
+        :image,
+        spend_attributes: [
+          :id,
+          :house,
+          :foods,
+          :traffic,
+          :infra,
+          :expendables,
+          :hoby,
+          :friends,
+          :books,
+          :medical,
+          :etc
+          ])
+      .merge(user_id: current_user.id)
     end
 
     def set_diary
