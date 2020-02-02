@@ -2,10 +2,6 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,:recoverable, :rememberable, :validatable
-	has_many :diaries,dependent: :destroy
-  validates :nickname,null: false
-  mount_uploader :image, ImageUploader
-
 
   def update_without_current_password(params, *options)
     params.delete(:current_password)
@@ -19,5 +15,4 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
-
 end
