@@ -1,0 +1,20 @@
+.header
+  .header__box
+    .header__box__right
+      %p LIFE
+    .header__box__center
+      %p 検索
+    .header__box__left
+      - if user_signed_in?
+        .header__box__left__button
+          .header__box__left__button--mypage
+            = link_to "マイページ",user_path(current_user)
+          .header__box__left__button--logout
+            = link_to "ログアウト",destroy_user_session_path, method: :delete
+      - else
+        .header__box__left__button
+          .header__box__left__button--signup
+            = link_to "新規登録",new_user_registration_path
+          .header__box__3--login
+            = link_to "ログイン",
+            new_user_session_path
