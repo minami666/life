@@ -10,17 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_02_013706) do
+ActiveRecord::Schema.define(version: 2020_02_01_143736) do
 
   create_table "diaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "title"
     t.string "text"
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_diaries_on_user_id"
   end
 
   create_table "spends", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "diary_id"
     t.integer "house", default: 0
     t.integer "foods", default: 0
     t.integer "traffic", default: 0
@@ -33,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_02_02_013706) do
     t.integer "etc", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["diary_id"], name: "index_spends_on_diary_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -48,4 +52,6 @@ ActiveRecord::Schema.define(version: 2020_02_02_013706) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "diaries", "users"
+  add_foreign_key "spends", "diaries"
 end
