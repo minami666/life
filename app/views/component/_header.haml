@@ -7,6 +7,8 @@
     .header__box__left
       - if user_signed_in?
         .header__box__left__button
+          .header__box__left__button--post
+            = link_to "新規投稿",new_diary_path
           .header__box__left__button--mypage
             = link_to "マイページ",user_path(current_user)
           .header__box__left__button--logout
@@ -15,6 +17,6 @@
         .header__box__left__button
           .header__box__left__button--signup
             = link_to "新規登録",new_user_registration_path
-          .header__box__3--login
+          .header__box__left__login
             = link_to "ログイン",
             new_user_session_path
