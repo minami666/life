@@ -1,0 +1,9 @@
+.diaries_index{
+  .diaries_index__header{}
+
+  .diaries_index__box{
+    @include structure;
+  }
+
+  .diaries_index__footer{}
+}

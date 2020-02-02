@@ -1,0 +1,9 @@
+.diaries_new{
+  .diaries_new__header{}
+
+  .diaries_new__box{
+    @include structure;
+  }
+
+  .diaries_new__footer{}
+}

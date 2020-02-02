@@ -1,0 +1,9 @@
+.diaries_show{
+  .diaries_show__header{}
+
+  .diaries_show__box{
+    @include structure;
+  }
+
+  .diaries_show__footer{}
+}

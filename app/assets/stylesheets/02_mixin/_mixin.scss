@@ -1,0 +1,7 @@
+@mixin structure{
+  height: calc(100vh - $header_height - $footer_height);
+  margin: 0 100px;
+  padding: $header_height 30px $footer_height;
+  font-size: 15px;
+  background-color: #fff;
+}
