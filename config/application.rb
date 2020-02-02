@@ -33,5 +33,6 @@ module Life
     config.generators.system_tests = nil
     config.time_zone = 'Tokyo'
     config.i18n.default_locale = :ja
+    config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
   end
 end
