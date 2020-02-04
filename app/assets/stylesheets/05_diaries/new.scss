@@ -1,0 +1,12 @@
+.diaries_new{
+  .diaries_new__header{}
+
+  .diaries_new__box{
+    @include structure;
+    &__form{
+      margin: 70px 20px;
+    }
+  }
+
+  .diaries_new__footer{}
+}

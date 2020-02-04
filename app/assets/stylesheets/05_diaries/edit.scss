@@ -1,0 +1,9 @@
+.diaries_edit{
+  .diaries_edit__header{}
+
+  .diaries_edit__box{
+    @include structure;
+  }
+
+  .diaries_edit__footer{}
+}
